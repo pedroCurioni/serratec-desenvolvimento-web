@@ -1,8 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const QuemSomos = () => {
+
+  let navigate = useNavigate();
+
+  function handleClick(){
+    navigate("/")
+  }
+
   return (
     <>
+    <button onClick={handleClick}>Voltar para Home</button>
       <h2>Pedro</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis

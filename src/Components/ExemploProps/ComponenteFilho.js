@@ -5,7 +5,7 @@ export const CompontenteFilho = (props) => {
     <>
       {props.nome}
       {props.idade}
-      {props.nerd}
+      {props.nerd ? "Verdadeiro" : "Falso"}
     </>
   );
 };

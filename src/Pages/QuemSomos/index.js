@@ -1,53 +1,23 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { FirstText, SecondText, Container, AulaButton } from "./style.js"
 
 export const QuemSomos = () => {
-
+  let { nome, idade } = useParams();
   let navigate = useNavigate();
 
-  function handleClick(){
-    navigate("/")
+  function handleClick() {
+    navigate("/");
   }
-
+  
   return (
     <>
-    <button onClick={handleClick}>Voltar para Home</button>
-      <h2>Pedro</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis
-        turpis et sem porta, vitae hendrerit velit vehicula. Etiam et facilisis
-        nisl. Vestibulum lobortis tellus ac iaculis hendrerit. Aliquam et.
-      </p>
-      <h2>Ester</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis
-        turpis et sem porta, vitae hendrerit velit vehicula. Etiam et facilisis
-        nisl. Vestibulum lobortis tellus ac iaculis hendrerit. Aliquam et.
-      </p>
-      <h2>Marina</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis
-        turpis et sem porta, vitae hendrerit velit vehicula. Etiam et facilisis
-        nisl. Vestibulum lobortis tellus ac iaculis hendrerit. Aliquam et.
-      </p>
-      <h2>Kaua</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis
-        turpis et sem porta, vitae hendrerit velit vehicula. Etiam et facilisis
-        nisl. Vestibulum lobortis tellus ac iaculis hendrerit. Aliquam et.
-      </p>
-      <h2>Breno</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis
-        turpis et sem porta, vitae hendrerit velit vehicula. Etiam et facilisis
-        nisl. Vestibulum lobortis tellus ac iaculis hendrerit. Aliquam et.
-      </p>
-      <h2>Sophia</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis
-        turpis et sem porta, vitae hendrerit velit vehicula. Etiam et facilisis
-        nisl. Vestibulum lobortis tellus ac iaculis hendrerit. Aliquam et.
-      </p>
+      <Container>
+        <FirstText>Quem somos</FirstText>
+
+        <SecondText>Ola eu sou o {nome}, tenho {idade} anos</SecondText>
+      </Container>
+      <AulaButton onClick={handleClick}>Voltar para Home</AulaButton>
     </>
   );
 };
